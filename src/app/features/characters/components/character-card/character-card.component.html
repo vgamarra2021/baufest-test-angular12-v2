@@ -1,0 +1,74 @@
+<div
+  class="w-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer"
+>
+  <img
+    class="object-cover object-center w-full h-56"
+    src="{{ character.image }}"
+    alt="Card Image"
+  />
+  <div class="flex items-center px-6 py-3 bg-gray-900">
+    <h1 class="text-lg font-semibold text-white">{{ character.name }}</h1>
+  </div>
+  <div class="flex flex-col gap-3 px-6 py-4">
+    <app-card-feature [value]="character.gender">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon h-6 w-6 icon-tabler icons-tabler-filled icon-tabler-user"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+        <path
+          d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z"
+        />
+      </svg>
+    </app-card-feature>
+    <app-card-feature [value]="character.location.name">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon h-6 w-6 icon-tabler icons-tabler-filled icon-tabler-map-pin"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"
+        />
+      </svg>
+    </app-card-feature>
+    <app-card-feature [value]="selectedEpisode">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="h-6 w-6 icon icon-tabler icons-tabler-filled icon-tabler-brand-youtube"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M18 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-12a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-9 6v6a1 1 0 0 0 1.514 .857l5 -3a1 1 0 0 0 0 -1.714l-5 -3a1 1 0 0 0 -1.514 .857z"
+        />
+      </svg>
+    </app-card-feature>
+    <app-primary-button title="Comparar" class="w-full" (onClick)="onClick()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon h-6 w-6 icon-tabler icons-tabler-outline icon-tabler-arrows-diff"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M11 16h10" />
+        <path d="M11 16l4 4" />
+        <path d="M11 16l4 -4" />
+        <path d="M13 8h-10" />
+        <path d="M13 8l-4 4" />
+        <path d="M13 8l-4 -4" />
+      </svg>
+    </app-primary-button>
+  </div>
+</div>

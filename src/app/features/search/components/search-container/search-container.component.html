@@ -1,0 +1,10 @@
+<section
+  class="flex flex-col w-full max-w-4xl mx-auto items-center justify-center p-6 gap-6"
+>
+  <img src="assets/imgs/rick-and-morty-logo.png" alt="RickAndMorty Logo" />
+  <app-search-input
+    class="w-full mt-6"
+    (onChange)="onChangeInput($event)"
+  ></app-search-input>
+  <app-search-nav></app-search-nav>
+</section>

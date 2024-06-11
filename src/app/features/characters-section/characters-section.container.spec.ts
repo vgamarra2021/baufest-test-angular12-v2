@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CharactersContainerComponent } from './characters-section.container';
+import { CharactersSectionContainer } from './characters-section.container';
 
-describe('CharactersContainerComponent', () => {
-  let component: CharactersContainerComponent;
-  let fixture: ComponentFixture<CharactersContainerComponent>;
+describe('CharactersSectionContainer', () => {
+  let component: CharactersSectionContainer;
+  let fixture: ComponentFixture<CharactersSectionContainer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharactersContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [CharactersSectionContainer],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CharactersContainerComponent);
+    fixture = TestBed.createComponent(CharactersSectionContainer);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

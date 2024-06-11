@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
 import { EpisodesRoutingModule } from './episodes-section-routing.module';
 import { EpisodesSectionComponent } from './episodes-section.component';
 import { EpisodesSectionContainer } from './episodes-section.container';
@@ -19,4 +18,4 @@ import { EpisodeDetailModalModule } from 'src/app/shared/episode-detail-modal/ep
   ],
   exports: [EpisodesSectionContainer],
 })
-export class EpisodesModule {}
+export class EpisodesSectionModule {}

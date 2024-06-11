@@ -13,7 +13,14 @@ const routes: Routes = [
     path: 'episodes',
     loadChildren: () =>
       import('./features/episodes-section/episodes-section.module').then(
-        (m) => m.EpisodesModule
+        (m) => m.EpisodesSectionModule
+      ),
+  },
+  {
+    path: 'locations',
+    loadChildren: () =>
+      import('./features/locations-section/locations-section.module').then(
+        (m) => m.LocationsSectionModule
       ),
   },
   { path: '**', redirectTo: 'characters' },

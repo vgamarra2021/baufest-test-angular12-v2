@@ -1,0 +1,27 @@
+<section
+  class="flex flex-col flex-wrap justify-center items-center gap-6 w-full max-w-full px-6"
+>
+  <hr class="border-gray-100 opacity-50 w-full" />
+  <p class="text-base text-center w-full text-gray-200 font-normal">
+    Total: {{ total }} - Página {{ page }}
+  </p>
+  <div
+    class="flex flex-row flex-wrap justify-center gap-6 w-full max-w-full px-6"
+  >
+    <app-location-card
+      *ngFor="let location of locations"
+      [name]="location.name"
+      [createdDate]="location.created"
+      [dimension]="location.dimension"
+      [type]="location.type"
+      [residentsNumber]="location.residents.length"
+    ></app-location-card>
+  </div>
+
+  <app-custom-paginator
+    [page]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="total"
+    (onPageChange)="onPageChange.emit($event)"
+  ></app-custom-paginator>
+</section>

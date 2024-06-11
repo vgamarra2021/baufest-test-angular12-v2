@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CharactersService } from '../characters/characters.service';
 import { EpisodesService } from '../episodes/episodes.service';
+import { LocationsService } from '../locations/locations.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,8 @@ import { EpisodesService } from '../episodes/episodes.service';
 export class SearchService {
   constructor(
     private charactersService: CharactersService,
-    private episodesService: EpisodesService
+    private episodesService: EpisodesService,
+    private locationService: LocationsService
   ) {}
 
   searchTextValue: string = '';
@@ -22,6 +24,9 @@ export class SearchService {
         break;
       case '/episodes':
         this.episodesService.onChangeSearchValue(searchValue);
+        break;
+      case '/locations':
+        this.locationService.onChangeSearchValue(searchValue);
         break;
       default:
         break;

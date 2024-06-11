@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EMPTY, forkJoin, of, Subject } from 'rxjs';
 import { catchError, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { UrlUtil } from 'src/app/shared/utils/url.util';
@@ -15,7 +15,7 @@ import { SearchService } from '../common/services/search/search.service';
   templateUrl: './episodes-section.container.html',
   styles: [],
 })
-export class EpisodesSectionContainer implements OnInit {
+export class EpisodesSectionContainer implements OnInit, OnDestroy {
   episodes: IEpisode[] = [];
   total: number = 0;
   page: number = 1;
@@ -41,13 +41,18 @@ export class EpisodesSectionContainer implements OnInit {
       .subscribe();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   onPageChange(page: number) {
     this.page = page;
     this.updateCards();
   }
 
   onDetailClick(episode: IEpisode) {
-    console.log(episode)
+    console.log(episode);
     of(episode)
       .pipe(
         switchMap((episode) => {

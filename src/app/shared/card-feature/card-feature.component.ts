@@ -12,5 +12,5 @@ import { Component, Input } from '@angular/core';
   ],
 })
 export class CardFeatureComponent {
-  @Input() value: string | number = '';
+  @Input() value: string | number | null = '';
 }

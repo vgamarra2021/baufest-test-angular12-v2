@@ -52,7 +52,6 @@ export class CharactersSectionContainer implements OnInit, OnDestroy {
   }
 
   onCompareClick(character: ICharacter) {
-    console.log(`Compare click : ${character.name}`);
     this.characterCompareService.selectCharacter(character);
   }
 

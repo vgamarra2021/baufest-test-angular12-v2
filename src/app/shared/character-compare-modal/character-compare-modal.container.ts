@@ -10,6 +10,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ICharacter } from 'src/app/features/common/interfaces/characters';
 import { CharacterCompareService } from 'src/app/features/common/services/characters/character-compare.service';
+import { CharacterCompareModalComponent } from './character-compare-modal.component';
 
 @Component({
   selector: 'app-character-compare-modal-container',
@@ -17,7 +18,8 @@ import { CharacterCompareService } from 'src/app/features/common/services/charac
   styles: [],
 })
 export class CharacterCompareModalContainer implements OnInit, OnDestroy {
-  @ViewChild('content') modalContent!: TemplateRef<any>;
+  @ViewChild('content')
+  modalContent!: TemplateRef<CharacterCompareModalComponent>;
   characters: ICharacter[] = [];
   protected unsubscribe$ = new Subject<void>();
 

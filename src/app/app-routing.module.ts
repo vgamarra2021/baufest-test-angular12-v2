@@ -5,8 +5,8 @@ const routes: Routes = [
   {
     path: 'characters',
     loadChildren: () =>
-      import('./features/characters/characters.module').then(
-        (m) => m.CharactersModule
+      import('./features/characters-section/characters-section.module').then(
+        (m) => m.CharactersSectionModule
       ),
   },
   { path: '**', redirectTo: 'characters' },

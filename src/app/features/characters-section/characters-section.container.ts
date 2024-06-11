@@ -5,6 +5,7 @@ import { ICharacterResponse } from '../common/interfaces/characters/character-re
 import { ICharacter } from '../common/interfaces/characters/character.interface';
 import { CharactersService } from '../common/services/characters/characters.service';
 import { SearchService } from '../common/services/search/search.service';
+import { CharacterCompareService } from '../common/services/characters/character-compare.service';
 
 @Component({
   selector: 'app-characters-section-container',
@@ -16,11 +17,13 @@ export class CharactersSectionContainer implements OnInit, OnDestroy {
   total: number = 0;
   page: number = 1;
   pageSize: number = 20;
+  compareCharacterBarVisible: boolean = false;
   protected unsubscribe$ = new Subject<void>();
 
   constructor(
     private charactersService: CharactersService,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private characterCompareService: CharacterCompareService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +36,14 @@ export class CharactersSectionContainer implements OnInit, OnDestroy {
         takeUntil(this.unsubscribe$)
       )
       .subscribe();
+
+    this.characterCompareService.compareList$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((characters) => {
+        characters.length === 0
+          ? (this.compareCharacterBarVisible = false)
+          : (this.compareCharacterBarVisible = true);
+      });
   }
 
   ngOnDestroy(): void {
@@ -42,6 +53,7 @@ export class CharactersSectionContainer implements OnInit, OnDestroy {
 
   onCompareClick(character: ICharacter) {
     console.log(`Compare click : ${character.name}`);
+    this.characterCompareService.selectCharacter(character);
   }
 
   onPageChange(page: number) {

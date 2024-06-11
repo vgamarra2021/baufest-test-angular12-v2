@@ -5,6 +5,8 @@ import { CustomPaginatorModule } from 'src/app/shared/custom-paginator/custom-pa
 import { CharactersSectionRoutingModule } from './characters-section-routing.module';
 import { CharactersSectionComponent } from './characters-section.component';
 import { CharactersSectionContainer } from './characters-section.container';
+import { CharacterCompareModalModule } from 'src/app/shared/character-compare-modal/character-compare-modal.module';
+import { CharacterCompareBarModule } from 'src/app/shared/character-compare-bar/character-compare-bar.module';
 
 @NgModule({
   declarations: [CharactersSectionContainer, CharactersSectionComponent],
@@ -13,6 +15,8 @@ import { CharactersSectionContainer } from './characters-section.container';
     CharactersSectionRoutingModule,
     CharacterCardModule,
     CustomPaginatorModule,
+    CharacterCompareModalModule,
+    CharacterCompareBarModule,
   ],
   exports: [CharactersSectionContainer],
 })

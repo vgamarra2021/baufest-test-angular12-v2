@@ -11,6 +11,7 @@ export class CharactersSectionComponent {
   @Input() page!: number;
   @Input() pageSize!: number;
   @Input() characters!: ICharacter[];
+  @Input() compareCharacterBarVisible!: boolean;
   @Output() onCompareClick = new EventEmitter<ICharacter>();
   @Output() onPageChange = new EventEmitter<number>();
 }

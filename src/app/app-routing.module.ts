@@ -9,6 +9,13 @@ const routes: Routes = [
         (m) => m.CharactersSectionModule
       ),
   },
+  {
+    path: 'episodes',
+    loadChildren: () =>
+      import('./features/episodes-section/episodes-section.module').then(
+        (m) => m.EpisodesModule
+      ),
+  },
   { path: '**', redirectTo: 'characters' },
 ];
 

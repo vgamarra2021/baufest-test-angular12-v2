@@ -1,0 +1,8 @@
+<ng-template #content let-modal>
+  <app-episode-detail-modal-ui
+    [characters]="characters"
+    [episode]="episode"
+    (onCloseClick)="modal.close()"
+  >
+  </app-episode-detail-modal-ui>
+</ng-template>

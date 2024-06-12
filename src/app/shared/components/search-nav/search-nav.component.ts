@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { searchNavConstant } from '../../features/common/contants/search-nav.constant';
+import { searchNavConstant } from 'src/app/pages/common/contants/search-nav.constant';
 
 @Component({
   selector: 'app-search-nav',

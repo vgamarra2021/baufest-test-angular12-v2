@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchSectionModule } from './features/search-section/search-section.module';
-import { HeaderModule } from './shared/header/header.module';
+import { HeaderModule } from './shared/components/header/header.module';
+import { SearchSectionModule } from './shared/components/search-section/search-section.module';
 
 @NgModule({
   declarations: [AppComponent],

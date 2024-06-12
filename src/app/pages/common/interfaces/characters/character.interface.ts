@@ -15,4 +15,5 @@ export interface ICharacter {
   created: string;
   episodeName?: string;
   episodeId?: number;
+  commonEpisodes?: { name: string; count: number }[];
 }

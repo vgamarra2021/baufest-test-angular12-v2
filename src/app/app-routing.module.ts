@@ -5,21 +5,21 @@ const routes: Routes = [
   {
     path: 'characters',
     loadChildren: () =>
-      import('./features/characters-section/characters-section.module').then(
+      import('./pages/characters-section/characters-section.module').then(
         (m) => m.CharactersSectionModule
       ),
   },
   {
     path: 'episodes',
     loadChildren: () =>
-      import('./features/episodes-section/episodes-section.module').then(
+      import('./pages/episodes-section/episodes-section.module').then(
         (m) => m.EpisodesSectionModule
       ),
   },
   {
     path: 'locations',
     loadChildren: () =>
-      import('./features/locations-section/locations-section.module').then(
+      import('./pages/locations-section/locations-section.module').then(
         (m) => m.LocationsSectionModule
       ),
   },

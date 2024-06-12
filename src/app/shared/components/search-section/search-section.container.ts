@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SearchService } from 'src/app/features/common/services/search/search.service';
+import { SearchService } from 'src/app/pages/common/services/search/search.service';
 
 @Component({
   selector: 'app-search-container',

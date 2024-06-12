@@ -8,9 +8,9 @@ import {
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ICharacter } from 'src/app/features/common/interfaces/characters';
-import { IEpisode } from 'src/app/features/common/interfaces/episodes/episode.interface';
-import { EpisodeDetailService } from 'src/app/features/common/services/episodes/episode-detail.service';
+import { ICharacter } from 'src/app/pages/common/interfaces/characters';
+import { IEpisode } from 'src/app/pages/common/interfaces/episodes/episode.interface';
+import { EpisodeDetailService } from 'src/app/pages/common/services/episodes/episode-detail.service';
 import { EpisodeDetailModalComponent } from './episode-detail-modal.component';
 
 @Component({

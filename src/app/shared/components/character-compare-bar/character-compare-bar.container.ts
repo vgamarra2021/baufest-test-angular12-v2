@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ICharacter } from 'src/app/features/common/interfaces/characters';
-import { CharacterCompareService } from 'src/app/features/common/services/characters/character-compare.service';
+import { ICharacter } from 'src/app/pages/common/interfaces/characters';
+import { CharacterCompareService } from 'src/app/pages/common/services/characters/character-compare.service';
 
 @Component({
   selector: 'app-character-compare-bar-container',

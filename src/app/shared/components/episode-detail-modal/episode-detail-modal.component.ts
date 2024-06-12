@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ICharacter } from 'src/app/features/common/interfaces/characters';
-import { IEpisode } from 'src/app/features/common/interfaces/episodes/episode.interface';
+import { ICharacter } from 'src/app/pages/common/interfaces/characters';
+import { IEpisode } from 'src/app/pages/common/interfaces/episodes/episode.interface';
 
 @Component({
   selector: 'app-episode-detail-modal-ui',

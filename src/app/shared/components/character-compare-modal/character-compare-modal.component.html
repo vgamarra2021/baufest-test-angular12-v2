@@ -42,12 +42,14 @@
         <tr>
           <th scope="row"># de Episodios en Común</th>
           <td *ngFor="let character of characters">
-            <div *ngFor="let item of countCommonEpisodies(character)">
-              <p>
-                Con <strong>{{ item.name }}</strong> -
-                <strong>{{ item.count }}</strong> Episodios
-              </p>
-            </div>
+            <ul>
+              <li *ngFor="let item of character.commonEpisodes">
+                <p>
+                  Con <strong>{{ item.name }}</strong> -
+                  <strong>{{ item.count }}</strong> Episodios
+                </p>
+              </li>
+            </ul>
           </td>
         </tr>
       </tbody>

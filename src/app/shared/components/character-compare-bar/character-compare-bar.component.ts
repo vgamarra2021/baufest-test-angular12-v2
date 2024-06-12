@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ICharacter } from 'src/app/features/common/interfaces/characters';
+import { ICharacter } from 'src/app/pages/common/interfaces/characters';
 
 @Component({
   selector: 'app-character-compare-bar-ui',

@@ -1,4 +1,7 @@
-<main class="flex flex-row bg-white w-full p-3 max-w-4xl shadow-md rounded-md" style="height: fit-content;">
+<main
+  class="flex flex-row bg-white w-full p-3 max-w-3xl shadow-md rounded-md"
+  style="height: fit-content"
+>
   <nav class="flex bg-gray-800 p-5 rounded-md">
     <ul class="flex flex-col items-start" style="gap: 4em; width: 12em">
       <li
@@ -6,7 +9,10 @@
         *ngFor="let item of navItems; let i = index"
       >
         <a
-          class="circle flex items-center justify-center bg-gray-500 p-3 size-10 hover:bg-gray-700 hover:no-underline hover:text-current"
+          [routerLink]="'/multi-step-form/' + item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="circle flex items-center justify-center bg-gray-500 p-3 size-10 hover:bg-gray-700 hover:no-underline hover:text-current cursor-pointer"
           >{{ i + 1 }}</a
         >
         <div class="flex flex-col items-start">

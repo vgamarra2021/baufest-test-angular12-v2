@@ -19,7 +19,7 @@ import { multiStepFormConstant } from '../common/contants/multi-step-form.contan
         border-radius: 100%;
       }
       a.active {
-        @appy bg-gray-900;
+        @apply bg-gray-900;
       }
     `,
   ],

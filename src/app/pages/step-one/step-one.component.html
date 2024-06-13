@@ -1,8 +1,28 @@
-<div class="font-light text-gray-500 sm:text-lg p-4 h-full w-full">
-  <h2 class="mb-1 text-3xl tracking-tight font-extrabold text-gray-900">
-    Personal Info
-  </h2>
-  <p class="text-base font-normal">
-    Please provide your name, email address, and phone number.
-  </p>
+<div
+  class="flex flex-col justify-center font-light text-gray-500 sm:text-lg p-4 h-full w-full gap-4"
+>
+  <app-step-header
+    title="Personal Info"
+    description="Please provide your name, email address, and phone number."
+  >
+  </app-step-header>
+  <form class="flex flex-col">
+    <mat-form-field class="max-w-md" appearance="fill">
+      <mat-label class="text-sm">Name</mat-label>
+      <input matInput placeholder="Ex. Victor" value="" />
+    </mat-form-field>
+    <mat-form-field class="max-w-md" appearance="fill">
+      <mat-label class="text-sm">Email Address</mat-label>
+      <input matInput placeholder="Ex. vgamarra@baufest.com" value="" />
+    </mat-form-field>
+    <mat-form-field class="max-w-md" appearance="fill">
+      <mat-label class="text-sm">Phone Number</mat-label>
+      <input matInput placeholder="Ex. 987654321" value="" />
+    </mat-form-field>
+    <app-primary-button
+      title="Next Step"
+      class="flex text-base"
+      style="width: fit-content; align-self: flex-end"
+    ></app-primary-button>
+  </form>
 </div>

@@ -1,0 +1,20 @@
+<main class="flex flex-row bg-white w-full p-3 max-w-4xl shadow-md rounded-md" style="height: fit-content;">
+  <nav class="flex bg-gray-800 p-5 rounded-md">
+    <ul class="flex flex-col items-start" style="gap: 4em; width: 12em">
+      <li
+        class="flex flex-row gap-3 items-center text-white"
+        *ngFor="let item of navItems; let i = index"
+      >
+        <a
+          class="circle flex items-center justify-center bg-gray-500 p-3 size-10 hover:bg-gray-700 hover:no-underline hover:text-current"
+          >{{ i + 1 }}</a
+        >
+        <div class="flex flex-col items-start">
+          <span class="text-sm">STEP {{ i + 1 }}</span>
+          <p class="font-semibold">{{ item.stepName }}</p>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</main>

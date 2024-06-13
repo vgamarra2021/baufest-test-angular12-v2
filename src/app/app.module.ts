@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './shared/components/header/header.module';
-import { SearchSectionModule } from './shared/components/search-section/search-section.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,8 +12,8 @@ import { SearchSectionModule } from './shared/components/search-section/search-s
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    SearchSectionModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,27 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'characters',
+    path: 'rick-and-morty',
     loadChildren: () =>
-      import('./pages/characters-section/characters-section.module').then(
-        (m) => m.CharactersSectionModule
+      import('./pages/rick-and-morty/rick-and-morty.module').then(
+        (m) => m.RickAndMortyModule
       ),
   },
   {
-    path: 'episodes',
+    path: 'multi-step-form',
     loadChildren: () =>
-      import('./pages/episodes-section/episodes-section.module').then(
-        (m) => m.EpisodesSectionModule
+      import('./pages/multi-step-form/multi-step-form.module').then(
+        (m) => m.MultiStepFormModule
       ),
   },
-  {
-    path: 'locations',
-    loadChildren: () =>
-      import('./pages/locations-section/locations-section.module').then(
-        (m) => m.LocationsSectionModule
-      ),
-  },
-  { path: '**', redirectTo: 'characters' },
+  { path: '**', redirectTo: 'rick-and-morty' },
 ];
 
 @NgModule({

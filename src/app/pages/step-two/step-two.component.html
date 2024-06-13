@@ -1,1 +1,38 @@
-<p>step-two works!</p>
+<div
+  class="flex flex-col justify-center font-light text-gray-500 sm:text-lg p-4 h-full w-full gap-4"
+>
+  <app-step-header
+    title="Select your plan"
+    description="You have the option of monthly or year billing"
+  >
+  </app-step-header>
+  <form class="flex flex-col gap-4">
+    <div class="grid gap-4 grid-cols-3">
+      <app-plan-card
+        *ngFor="let plan of plans"
+        [title]="plan.name"
+        [price]="plan.monthlyPrice"
+        [billingType]="billingType"
+      ></app-plan-card>
+    </div>
+
+    <div
+      class="flex flex-row justify-center items-center gap-2 w-full bg-gray-200 py-2 rounded-sm"
+    >
+      <strong class="text-gray-900 text-sm font-semibold">Monthly</strong>
+      <mat-slide-toggle></mat-slide-toggle>
+      <strong class="text-gray-900 text-sm font-semibold">Yearly</strong>
+    </div>
+
+    <div class="flex flex-row justify-between w-full items-center">
+      <app-secondary-button
+        title="Go Back"
+        class="flex text-base w-fit self-end"
+      ></app-secondary-button>
+      <app-primary-button
+        title="Next Step"
+        class="flex text-base w-fit self-end"
+      ></app-primary-button>
+    </div>
+  </form>
+</div>

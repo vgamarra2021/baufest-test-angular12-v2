@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-step-one',
@@ -10,13 +10,10 @@ import { Component, OnInit } from '@angular/core';
       }
 
       mat-form-field.mat-form-field {
-        @apply text-base
+        @apply text-base;
       }
     `,
   ],
 })
-export class StepOneComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class StepOneComponent {
 }

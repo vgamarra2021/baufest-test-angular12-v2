@@ -6,5 +6,5 @@ export interface IAddon {
   price: number;
   formControlName: string;
   formControl?: FormControl;
-  initialValue: boolean;
+  value: boolean;
 }

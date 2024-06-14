@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { AbstractControl, FormGroup } from '@angular/forms';
 import { IAddon } from '../common/interfaces/multi-step-form/addon.interface';
 
 @Component({
@@ -10,6 +10,7 @@ import { IAddon } from '../common/interfaces/multi-step-form/addon.interface';
 })
 export class StepThreeComponent {
   @Input() addons!: IAddon[];
+  @Input() addonsControl!: AbstractControl[];
   @Input() formGroup!: FormGroup;
   @Output() onNextStep = new EventEmitter<void>();
   @Output() onGoBack = new EventEmitter<void>();

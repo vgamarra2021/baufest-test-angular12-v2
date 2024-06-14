@@ -6,20 +6,20 @@ export const multiStepFormAddonsConstant: IAddon[] = [
     description: 'Access to multiplayer games',
     price: 4,
     formControlName: 'online',
-    initialValue: true
+    value: true,
   },
   {
     title: 'Larger storage',
     description: 'Access to multiplayer games',
     price: 5,
     formControlName: 'largerStorage',
-    initialValue: true
+    value: true,
   },
   {
     title: 'Customizable Profile',
     description: 'Custom theme on your profile',
     price: 8,
     formControlName: 'customizableProfile',
-    initialValue: false
+    value: false,
   },
 ];

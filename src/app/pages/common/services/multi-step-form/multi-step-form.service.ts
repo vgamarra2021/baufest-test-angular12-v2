@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { multiStepFormAddonsConstant } from '../../contants/multi-step-form-addons.constant';
 import { multiStepFormPlansConstant } from '../../contants/multi-step-form-plans.constant';
 
 @Injectable({
@@ -14,5 +15,7 @@ export class MultiStepFormService {
     selectedPlan: multiStepFormPlansConstant[1],
     billingType: 'month',
   };
-  stepThreeData = {};
+  stepThreeData = {
+    addons: multiStepFormAddonsConstant,
+  };
 }

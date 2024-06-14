@@ -4,6 +4,7 @@ import {
   FormControl,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
+import { IAddon } from 'src/app/pages/common/interfaces/multi-step-form/addon.interface';
 
 @Component({
   selector: 'app-addons-card',
@@ -24,21 +25,25 @@ import {
   ],
 })
 export class AddonsCardComponent implements ControlValueAccessor {
-  @Input() title!: string;
-  @Input() description!: string;
-  @Input() price!: string;
+  @Input() addon!: IAddon;
 
   public formControl: FormControl = new FormControl();
 
-  writeValue(value: any) {
-    this.formControl.setValue(value);
+  writeValue(addon: IAddon) {
+    this.formControl.setValue(addon.value);
   }
 
   registerOnChange(fn: Function) {
-    this.formControl.valueChanges.subscribe((val) => fn(val));
+    this.formControl.valueChanges.subscribe((val) => {
+      this.addon.value = val;
+      fn(this.addon);
+    });
   }
 
   registerOnTouched(fn: Function) {
-    this.formControl.valueChanges.subscribe((val) => fn(val));
+    this.formControl.valueChanges.subscribe((val) => {
+      this.addon.value = val;
+      fn(this.addon);
+    });
   }
 }

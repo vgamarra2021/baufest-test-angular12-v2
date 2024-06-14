@@ -9,9 +9,7 @@
   <form class="flex flex-col gap-4" [formGroup]="formGroup">
     <app-addons-card
       *ngFor="let addon of addons"
-      [title]="addon.title"
-      [description]="addon.description"
-      [price]="addon.price.toString()"
+      [addon]="addon"
       [formControlName]="addon.formControlName"
     >
       ></app-addons-card

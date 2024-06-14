@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IPlan } from 'src/app/pages/common/interfaces/multi-step-form/plan.interface';
 
 @Component({
   selector: 'app-plan-card',
@@ -6,8 +7,8 @@ import { Component, Input } from '@angular/core';
   styles: [],
 })
 export class PlanCardComponent {
-  @Input() price!: number;
-  @Input() title!: string;
+  @Input() plan!: IPlan;
   @Input() billingType!: string;
   @Input() isActive: boolean = false;
+  @Output() onChangePlan = new EventEmitter<IPlan>();
 }

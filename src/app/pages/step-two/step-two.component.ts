@@ -1,22 +1,18 @@
-import { Component, Input } from '@angular/core';
-import { multiStepFormPlansConstant } from '../common/contants/multi-step-form-plans.constant';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { IPlan } from '../common/interfaces/multi-step-form/plan.interface';
 
 @Component({
-  selector: 'app-step-two',
+  selector: 'app-step-two-ui',
   templateUrl: './step-two.component.html',
-  styles: [
-    `
-      :host {
-        @apply w-full;
-      }
-
-      mat-form-field.mat-form-field {
-        @apply text-base;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class StepTwoComponent {
-  plans = multiStepFormPlansConstant;
+  @Input() plans!: IPlan[];
+  @Input() selectedPlan!: IPlan;
   @Input() billingType!: string;
+  @Input() formGroup!: FormGroup;
+  @Output() onChangePlan = new EventEmitter<IPlan>();
+  @Output() onChangeBillingType = new EventEmitter<string>();
+  @Output() onNextStep = new EventEmitter<void>();
 }

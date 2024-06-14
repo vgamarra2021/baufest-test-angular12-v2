@@ -6,22 +6,32 @@
     description="You have the option of monthly or year billing"
   >
   </app-step-header>
-  <form class="flex flex-col gap-4">
+  <form class="flex flex-col gap-4" [formGroup]="formGroup">
     <div class="grid gap-4 grid-cols-3">
       <app-plan-card
         *ngFor="let plan of plans"
-        [title]="plan.name"
-        [price]="plan.monthlyPrice"
+        [plan]="plan"
         [billingType]="billingType"
+        [isActive]="selectedPlan.id === plan.id"
+        (onChangePlan)="onChangePlan.emit($event)"
       ></app-plan-card>
     </div>
 
     <div
       class="flex flex-row justify-center items-center gap-2 w-full bg-gray-200 py-2 rounded-sm"
     >
-      <strong class="text-gray-900 text-sm font-semibold">Monthly</strong>
-      <mat-slide-toggle></mat-slide-toggle>
-      <strong class="text-gray-900 text-sm font-semibold">Yearly</strong>
+      <strong
+        class="text-gray-900 text-sm"
+        [ngClass]="billingType === 'month' ? 'font-bold' : 'font-normal'"
+        >Monthly</strong
+      >
+      <mat-slide-toggle formControlName="isYearly" (change)="onChangeBillingType.emit()"></mat-slide-toggle>
+
+      <strong
+        class="text-gray-900 text-sm"
+        [ngClass]="billingType === 'year' ? 'font-bold' : 'font-normal'"
+        >Yearly</strong
+      >
     </div>
 
     <div class="flex flex-row justify-between w-full items-center">
@@ -32,6 +42,7 @@
       <app-primary-button
         title="Next Step"
         class="flex text-base w-fit self-end"
+        (onClick)="onNextStep.emit()"
       ></app-primary-button>
     </div>
   </form>

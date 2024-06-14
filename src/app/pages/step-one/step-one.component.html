@@ -6,20 +6,36 @@
     description="Please provide your name, email address, and phone number."
   >
   </app-step-header>
-  <form class="flex flex-col">
+  <form class="flex flex-col" [formGroup]="formGroup">
     <mat-form-field class="max-w-md" appearance="fill">
       <mat-label class="text-sm">Name</mat-label>
-      <input matInput placeholder="Ex. Victor" value="" />
+      <input
+        matInput
+        formControlName="name"
+        placeholder="Ex. Victor"
+        value=""
+      />
     </mat-form-field>
     <mat-form-field class="max-w-md" appearance="fill">
       <mat-label class="text-sm">Email Address</mat-label>
-      <input matInput placeholder="Ex. vgamarra@baufest.com" value="" />
+      <input
+        matInput
+        formControlName="email"
+        placeholder="Ex. vgamarra@baufest.com"
+        value=""
+      />
     </mat-form-field>
     <mat-form-field class="max-w-md" appearance="fill">
       <mat-label class="text-sm">Phone Number</mat-label>
-      <input matInput placeholder="Ex. 987654321" value="" />
+      <input
+        matInput
+        formControlName="phoneNumber"
+        placeholder="Ex. 987654321"
+        value=""
+      />
     </mat-form-field>
     <app-primary-button
+      (onClick)="onNextStep.emit(formGroup.value)"
       title="Next Step"
       class="flex text-base w-fit self-end"
     ></app-primary-button>

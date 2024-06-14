@@ -1,4 +1,5 @@
 <div
+  (click)="onChangePlan.emit(plan)"
   [ngClass]="isActive ? 'bg-gray-800 text-white' : 'bg-white'"
   class="w-full p-3 space-y-4 text-center rounded-lg border border-gray-200 cursor-pointer shadow-sm duration-100 transition-all ease-in-out hover:-translate-y-1"
 >
@@ -6,9 +7,11 @@
     [ngClass]="isActive ? 'text-gray-200' : 'text-gray-800'"
     class="font-medium uppercase"
   >
-    {{ title }}
+    {{ plan.name }}
   </p>
-  <h2 class="text-2xl font-bold uppercase">${{ price }}</h2>
+  <h2 class="text-2xl font-bold uppercase">
+    ${{ billingType === "month" ? plan.monthlyPrice : plan.monthlyPrice * 12 }}
+  </h2>
   <p
     [ngClass]="isActive ? 'text-gray-200' : 'text-gray-800'"
     class="font-medium"

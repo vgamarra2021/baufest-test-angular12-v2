@@ -1,16 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { StepTwoRoutingModule } from './step-two-routing.module';
-import { StepTwoComponent } from './step-two.component';
-import { StepHeaderModule } from 'src/app/shared/components/step-header/step-header.module';
-import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
-import { SecondaryButtonModule } from 'src/app/shared/components/secondary-button/secondary-button.module';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { PlanCardModule } from 'src/app/shared/components/plan-card/plan-card.module';
+import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
+import { SecondaryButtonModule } from 'src/app/shared/components/secondary-button/secondary-button.module';
+import { StepHeaderModule } from 'src/app/shared/components/step-header/step-header.module';
+import { StepTwoRoutingModule } from './step-two-routing.module';
+import { StepTwoComponent } from './step-two.component';
+import { StepTwoContainer } from './step-two.container';
 
 @NgModule({
-  declarations: [StepTwoComponent],
+  declarations: [StepTwoComponent, StepTwoContainer],
   imports: [
     CommonModule,
     StepTwoRoutingModule,
@@ -19,7 +20,8 @@ import { PlanCardModule } from 'src/app/shared/components/plan-card/plan-card.mo
     SecondaryButtonModule,
     MatSlideToggleModule,
     PlanCardModule,
+    ReactiveFormsModule
   ],
-  exports: [StepTwoComponent],
+  exports: [StepTwoContainer],
 })
 export class StepTwoModule {}

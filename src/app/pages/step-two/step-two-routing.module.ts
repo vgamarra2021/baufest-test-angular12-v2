@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { StepTwoComponent } from './step-two.component';
+import { StepTwoContainer } from './step-two.container';
 
-const routes: Routes = [{ path: '', component: StepTwoComponent }];
+const routes: Routes = [{ path: '', component: StepTwoContainer }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

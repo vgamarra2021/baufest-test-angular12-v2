@@ -6,7 +6,16 @@
     description="Add-ons help enhance your gaming experience"
   >
   </app-step-header>
-  <form class="flex flex-col gap-4">
+  <form class="flex flex-col gap-4" [formGroup]="formGroup">
+    <app-addons-card
+      *ngFor="let addon of addons"
+      [title]="addon.title"
+      [description]="addon.description"
+      [price]="addon.price.toString()"
+      [formControlName]="addon.formControlName"
+      >
+    ></app-addons-card>
+
     <div class="flex flex-row justify-between w-full items-center">
       <app-secondary-button
         title="Go Back"
@@ -15,6 +24,7 @@
       <app-primary-button
         title="Next Step"
         class="flex text-base w-fit self-end"
+        (onClick)="onNextStep.emit()"
       ></app-primary-button>
     </div>
   </form>

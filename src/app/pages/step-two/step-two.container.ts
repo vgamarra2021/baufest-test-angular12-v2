@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { multiStepFormPlansConstant } from '../common/contants/multi-step-form-plans.constant';
 import { IPlan } from '../common/interfaces/multi-step-form/plan.interface';
+import { MultiStepFormService } from '../common/services/multi-step-form/multi-step-form.service';
 
 @Component({
   selector: 'app-step-two-container',
@@ -21,11 +22,15 @@ import { IPlan } from '../common/interfaces/multi-step-form/plan.interface';
 })
 export class StepTwoContainer {
   plans = multiStepFormPlansConstant;
-  selectedPlan: IPlan = multiStepFormPlansConstant[1];
-  billingType = 'month';
+  selectedPlan: IPlan = this.multiStepFormService.stepTwoData.selectedPlan;
+  billingType = this.multiStepFormService.stepTwoData.billingType;
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private multiStepFormService: MultiStepFormService
+  ) {
     this.formGroup = this.buildForm();
   }
 
@@ -45,6 +50,10 @@ export class StepTwoContainer {
   }
 
   onNextStep() {
+    this.multiStepFormService.stepTwoData = {
+      selectedPlan: this.selectedPlan,
+      billingType: this.billingType,
+    };
     this.router.navigate(['/multi-step-form/step-three']);
   }
 

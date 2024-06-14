@@ -6,8 +6,8 @@
     description="Double-check everything looks Ok before confirming"
   >
   </app-step-header>
-  <form class="flex flex-col gap-4">
-    <div class="flex flex-col p-4 rounded-md bg-gray-200 w-full">
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col p-4 rounded-lg bg-gray-200 w-full">
       <div class="flex flex-row w-full justify-between">
         <div class="flex flex-col">
           <strong class="text-lg font-semibold text-gray-900">{{
@@ -27,7 +27,7 @@
           }}$/{{ billingTypeShort }}</strong
         >
       </div>
-      <hr class="border border-gray-600 w-full my-2" />
+      <hr class="border-gray-400 border-opacity-65 w-full my-3" style="border-width: 1px;" />
       <div class="flex flex-col gap-2">
         <div
           *ngFor="let addon of selectedAddons"
@@ -63,5 +63,5 @@
         (onClick)="onNextStep.emit()"
       ></app-primary-button>
     </div>
-  </form>
+  </div>
 </div>

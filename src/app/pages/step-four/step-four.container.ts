@@ -27,13 +27,6 @@ export class StepFourContainer {
 
   constructor(private service: MultiStepFormService, private router: Router) {}
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-
-    console.log(this.billingType);
-  }
-
   onNextStep() {
     console.log(this.service.stepOneData);
     console.log(this.service.stepTwoData);

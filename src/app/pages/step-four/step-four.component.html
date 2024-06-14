@@ -7,14 +7,60 @@
   >
   </app-step-header>
   <form class="flex flex-col gap-4">
+    <div class="flex flex-col p-4 rounded-md bg-gray-200 w-full">
+      <div class="flex flex-row w-full justify-between">
+        <div class="flex flex-col">
+          <strong class="text-lg font-semibold text-gray-900">{{
+            selectedPlan.name
+          }}</strong>
+          <a
+            routerLink="/multi-step-form/step-two"
+            class="font-normal text-sm text-violet-700 hover:underline cursor-pointer"
+            >Change</a
+          >
+        </div>
+        <strong class="text-lg font-bold text-gray-900"
+          >+{{
+            billingType === "month"
+              ? selectedPlan.monthlyPrice
+              : selectedPlan.monthlyPrice * 12
+          }}$/{{ billingTypeShort }}</strong
+        >
+      </div>
+      <hr class="border border-gray-600 w-full my-2" />
+      <div class="flex flex-col gap-2">
+        <div
+          *ngFor="let addon of selectedAddons"
+          class="flex flex-row p-0 items-center justify-between"
+        >
+          <p class="text-base font-normal">{{ addon.title }}</p>
+          <strong class="text-base font-semibold text-gray-900"
+            >+{{ billingType === "month" ? addon.price : addon.price * 12 }}$/{{
+              billingTypeShort
+            }}</strong
+          >
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row px-4 pb-4 items-center justify-between">
+      <p class="text-base font-normal">
+        Total per {{ billingType === "month" ? billingType : "year" }}:
+      </p>
+      <strong class="text-lg font-semibold text-violet-700"
+        >+{{ totalMonthPrice }}$/{{ billingTypeShort }}</strong
+      >
+    </div>
+
     <div class="flex flex-row justify-between w-full items-center">
       <app-secondary-button
         title="Go Back"
         class="flex text-base w-fit self-end"
+        (onClick)="onGoBack.emit()"
       ></app-secondary-button>
       <app-primary-button
         title="Finish"
         class="flex text-base w-fit self-end"
+        (onClick)="onNextStep.emit()"
       ></app-primary-button>
     </div>
   </form>

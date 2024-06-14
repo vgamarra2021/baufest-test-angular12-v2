@@ -10,6 +10,7 @@ import { IAddon } from '../common/interfaces/multi-step-form/addon.interface';
 })
 export class StepThreeComponent {
   @Input() addons!: IAddon[];
-  @Output() onNextStep = new EventEmitter<void>();
   @Input() formGroup!: FormGroup;
+  @Output() onNextStep = new EventEmitter<void>();
+  @Output() onGoBack = new EventEmitter<void>();
 }

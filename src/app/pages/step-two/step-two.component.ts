@@ -15,4 +15,5 @@ export class StepTwoComponent {
   @Output() onChangePlan = new EventEmitter<IPlan>();
   @Output() onChangeBillingType = new EventEmitter<string>();
   @Output() onNextStep = new EventEmitter<void>();
+  @Output() onGoBack = new EventEmitter<void>();
 }

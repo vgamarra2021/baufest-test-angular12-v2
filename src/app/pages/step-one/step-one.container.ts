@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { IYourInfo } from '../common/interfaces/multi-step-form/your-info.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-step-one-container',
@@ -20,16 +20,21 @@ import { IYourInfo } from '../common/interfaces/multi-step-form/your-info.interf
 export class StepOneContainer {
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formGroup = this.buildForm();
   }
 
   private buildForm() {
     return this.formBuilder.group({
-      name: '',
-      email: '',
-      phoneNumber: '',
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(9)]],
     });
   }
-  onNextStep(data: IYourInfo) {}
+  onNextStep() {
+    const isValid = this.formGroup.valid;
+    isValid
+      ? this.router.navigate(['/multi-step-form/step-two'])
+      : this.formGroup.markAllAsTouched();
+  }
 }

@@ -13,13 +13,15 @@
       [description]="addon.description"
       [price]="addon.price.toString()"
       [formControlName]="addon.formControlName"
-      >
-    ></app-addons-card>
+    >
+      ></app-addons-card
+    >
 
     <div class="flex flex-row justify-between w-full items-center">
       <app-secondary-button
         title="Go Back"
         class="flex text-base w-fit self-end"
+        (onClick)="onGoBack.emit()"
       ></app-secondary-button>
       <app-primary-button
         title="Next Step"

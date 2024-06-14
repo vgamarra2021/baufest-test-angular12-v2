@@ -14,6 +14,7 @@
         formControlName="name"
         placeholder="Ex. Victor"
         value=""
+        required
       />
     </mat-form-field>
     <mat-form-field class="max-w-md" appearance="fill">
@@ -23,6 +24,7 @@
         formControlName="email"
         placeholder="Ex. vgamarra@baufest.com"
         value=""
+        required
       />
     </mat-form-field>
     <mat-form-field class="max-w-md" appearance="fill">
@@ -32,10 +34,11 @@
         formControlName="phoneNumber"
         placeholder="Ex. 987654321"
         value=""
+        required
       />
     </mat-form-field>
     <app-primary-button
-      (onClick)="onNextStep.emit(formGroup.value)"
+      (onClick)="onNextStep.emit()"
       title="Next Step"
       class="flex text-base w-fit self-end"
     ></app-primary-button>

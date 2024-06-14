@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { multiStepFormPlansConstant } from '../common/contants/multi-step-form-plans.constant';
 import { IPlan } from '../common/interfaces/multi-step-form/plan.interface';
 
@@ -24,7 +25,7 @@ export class StepTwoContainer {
   billingType = 'month';
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formGroup = this.buildForm();
   }
 
@@ -41,5 +42,13 @@ export class StepTwoContainer {
   onChangeBillingType() {
     const isYearly = this.formGroup.value?.isYearly;
     isYearly ? (this.billingType = 'year') : (this.billingType = 'month');
+  }
+
+  onNextStep() {
+    this.router.navigate(['/multi-step-form/step-three']);
+  }
+
+  onGoBack() {
+    this.router.navigate(['/multi-step-form/step-one']);
   }
 }

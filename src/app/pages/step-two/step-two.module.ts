@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { RouterModule } from '@angular/router';
 import { PlanCardModule } from 'src/app/shared/components/plan-card/plan-card.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { SecondaryButtonModule } from 'src/app/shared/components/secondary-button/secondary-button.module';
@@ -20,7 +21,8 @@ import { StepTwoContainer } from './step-two.container';
     SecondaryButtonModule,
     MatSlideToggleModule,
     PlanCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
   ],
   exports: [StepTwoContainer],
 })

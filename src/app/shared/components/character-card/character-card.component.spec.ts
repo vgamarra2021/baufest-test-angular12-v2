@@ -8,14 +8,31 @@ describe('CharacterCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharacterCardComponent ]
-    })
-    .compileComponents();
+      declarations: [CharacterCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CharacterCardComponent);
     component = fixture.componentInstance;
+    component.character = {
+      id: 204,
+      name: 'Lisa',
+      status: 'Dead',
+      species: 'Alien',
+      type: '',
+      gender: 'Female',
+      origin: { name: 'unknown', url: '' },
+      location: {
+        name: 'Immortality Field Resort',
+        url: 'https://rickandmortyapi.com/api/location/7',
+      },
+      image: 'https://rickandmortyapi.com/api/character/avatar/204.jpeg',
+      episode: ['https://rickandmortyapi.com/api/episode/26'],
+      url: 'https://rickandmortyapi.com/api/character/204',
+      created: '2017-12-30T12:59:58.460Z',
+    };
+    component.selectedEpisode = 'Episode Test';
     fixture.detectChanges();
   });
 

@@ -9,6 +9,7 @@ import { AddonsCardModule } from 'src/app/shared/components/addons-card/addons-c
 import { ReactiveFormsModule } from '@angular/forms';
 import { StepThreeContainer } from './step-three.container';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [StepThreeComponent, StepThreeContainer],
@@ -20,7 +21,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     SecondaryButtonModule,
     ReactiveFormsModule,
     AddonsCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    RouterModule
   ],
   exports: [StepThreeContainer],
 })

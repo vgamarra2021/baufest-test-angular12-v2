@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { SecondaryButtonModule } from 'src/app/shared/components/secondary-button/secondary-button.module';
 import { StepHeaderModule } from 'src/app/shared/components/step-header/step-header.module';
@@ -15,6 +16,7 @@ import { StepFourContainer } from './step-four.container';
     StepHeaderModule,
     PrimaryButtonModule,
     SecondaryButtonModule,
+    RouterModule
   ],
   exports: [StepFourContainer],
 })

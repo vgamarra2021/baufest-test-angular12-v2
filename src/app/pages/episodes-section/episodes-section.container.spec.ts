@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { EpisodesService } from '../common/services/episodes/episodes.service';
 
 import { EpisodesSectionContainer } from './episodes-section.container';
 
@@ -8,9 +10,9 @@ describe('EpisodesSectionContainer', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EpisodesSectionContainer ]
-    })
-    .compileComponents();
+      declarations: [EpisodesSectionContainer],
+      imports: [HttpClientTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

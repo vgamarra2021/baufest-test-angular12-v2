@@ -1,16 +1,18 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { CharactersService } from './characters.service';
 
 describe('CharactersService', () => {
-  let service: CharactersService;
-
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(CharactersService);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [CharactersService],
+    });
   });
 
   it('should be created', () => {
+    const service = TestBed.inject(CharactersService);
     expect(service).toBeTruthy();
   });
 });

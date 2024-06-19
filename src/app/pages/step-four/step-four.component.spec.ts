@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { StepFourComponent } from './step-four.component';
 
 describe('StepFourComponent', () => {
@@ -8,14 +7,19 @@ describe('StepFourComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StepFourComponent ]
-    })
-    .compileComponents();
+      declarations: [StepFourComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(StepFourComponent);
     component = fixture.componentInstance;
+
+    component.billingType = 'month';
+    component.selectedPlan = { id: 10, monthlyPrice: 9, name: 'NewPlan' };
+    component.billingTypeShort = 'mo';
+    component.totalMonthPrice = '90';
+
     fixture.detectChanges();
   });
 

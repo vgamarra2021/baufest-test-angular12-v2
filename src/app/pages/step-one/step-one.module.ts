@@ -8,6 +8,7 @@ import { StepHeaderModule } from 'src/app/shared/components/step-header/step-hea
 import { StepOneContainer } from './step-one.container';
 import { StepOneRoutingModule } from './step-one-routing.module';
 import { StepOneComponent } from './step-one.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [StepOneComponent, StepOneContainer],
@@ -19,6 +20,7 @@ import { StepOneComponent } from './step-one.component';
     StepHeaderModule,
     PrimaryButtonModule,
     ReactiveFormsModule,
+    RouterModule
   ],
   exports: [StepOneContainer],
 })

@@ -7,7 +7,7 @@
     [ngClass]="isActive ? 'text-gray-200' : 'text-gray-800'"
     class="font-medium uppercase"
   >
-    {{ plan.name }}
+    {{ plan.name || "" }}
   </p>
   <h2 class="text-2xl font-bold uppercase">
     ${{ billingType === "month" ? plan.monthlyPrice : plan.monthlyPrice * 12 }}

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { multiStepFormAddonsConstant } from '../common/contants/multi-step-form-addons.constant';
 import { IAddon } from '../common/interfaces/multi-step-form/addon.interface';
 import { MultiStepFormService } from '../common/services/multi-step-form/multi-step-form.service';
 
@@ -22,7 +21,7 @@ import { MultiStepFormService } from '../common/services/multi-step-form/multi-s
 })
 export class StepThreeContainer implements OnInit {
   addons = this.service.stepThreeData.addons;
-  formGroup!: FormGroup;
+  formGroup: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,

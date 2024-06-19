@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { StepOneContainer } from './step-one.container';
 
@@ -9,6 +11,7 @@ describe('StepOneContainer', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [StepOneContainer],
+      imports: [ReactiveFormsModule, RouterTestingModule],
     }).compileComponents();
   });
 

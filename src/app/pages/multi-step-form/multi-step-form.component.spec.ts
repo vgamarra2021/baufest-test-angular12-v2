@@ -1,5 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 import { MultiStepFormComponent } from './multi-step-form.component';
 
 describe('MultiStepFormComponent', () => {
@@ -10,6 +12,7 @@ describe('MultiStepFormComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [MultiStepFormComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [RouterTestingModule],
     }).compileComponents();
   });
 

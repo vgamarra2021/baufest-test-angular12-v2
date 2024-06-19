@@ -25,7 +25,10 @@
         [ngClass]="billingType === 'month' ? 'font-bold' : 'font-normal'"
         >Monthly</strong
       >
-      <mat-slide-toggle formControlName="isYearly" (change)="onChangeBillingType.emit()"></mat-slide-toggle>
+      <mat-slide-toggle
+        formControlName="isYearly"
+        (change)="onChangeBillingType.emit()"
+      ></mat-slide-toggle>
 
       <strong
         class="text-gray-900 text-sm"

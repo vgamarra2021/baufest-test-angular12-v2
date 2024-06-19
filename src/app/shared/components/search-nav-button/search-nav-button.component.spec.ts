@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { SearchNavButtonComponent } from './search-nav-button.component';
 
@@ -8,9 +9,9 @@ describe('SearchNavButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchNavButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchNavButtonComponent],
+      imports: [RouterTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

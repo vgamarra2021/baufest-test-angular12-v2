@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,8 +20,9 @@ import { RouterModule } from '@angular/router';
     StepHeaderModule,
     PrimaryButtonModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [StepOneContainer],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StepOneModule {}

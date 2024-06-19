@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { SecondaryButtonModule } from 'src/app/shared/components/secondary-button/secondary-button.module';
@@ -16,8 +17,10 @@ import { StepFourContainer } from './step-four.container';
     StepHeaderModule,
     PrimaryButtonModule,
     SecondaryButtonModule,
-    RouterModule
+    ReactiveFormsModule,
+    RouterModule,
   ],
   exports: [StepFourContainer],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StepFourModule {}

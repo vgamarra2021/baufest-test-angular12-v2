@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CharacterCompareBarContainer } from './character-compare-bar.container';
 
 describe('CharacterCompareBarContainer', () => {
@@ -8,9 +8,9 @@ describe('CharacterCompareBarContainer', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharacterCompareBarContainer ]
-    })
-    .compileComponents();
+      declarations: [CharacterCompareBarContainer],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CharacterCompareModalComponent } from './character-compare-modal.component';
 
 describe('CharacterCompareModalComponent', () => {
@@ -8,9 +8,9 @@ describe('CharacterCompareModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharacterCompareModalComponent ]
-    })
-    .compileComponents();
+      declarations: [CharacterCompareModalComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {

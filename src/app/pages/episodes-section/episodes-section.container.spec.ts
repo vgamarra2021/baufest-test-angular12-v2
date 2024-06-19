@@ -1,7 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { EpisodesService } from '../common/services/episodes/episodes.service';
-
 import { EpisodesSectionContainer } from './episodes-section.container';
 
 describe('EpisodesSectionContainer', () => {
@@ -12,6 +11,7 @@ describe('EpisodesSectionContainer', () => {
     await TestBed.configureTestingModule({
       declarations: [EpisodesSectionContainer],
       imports: [HttpClientTestingModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 

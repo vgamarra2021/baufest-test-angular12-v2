@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LocationsSectionContainer } from './locations-section.container';
-
 
 describe('LocationsSectionContainer', () => {
   let component: LocationsSectionContainer;
@@ -11,6 +11,7 @@ describe('LocationsSectionContainer', () => {
     await TestBed.configureTestingModule({
       declarations: [LocationsSectionContainer],
       imports: [HttpClientTestingModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepThreeRoutingModule } from './step-three-routing.module';
 import { StepThreeComponent } from './step-three.component';
@@ -22,8 +22,9 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     AddonsCardModule,
     MatCheckboxModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [StepThreeContainer],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StepThreeModule {}

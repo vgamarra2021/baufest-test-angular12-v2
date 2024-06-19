@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
@@ -25,5 +25,6 @@ import { StepTwoContainer } from './step-two.container';
     RouterModule,
   ],
   exports: [StepTwoContainer],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StepTwoModule {}

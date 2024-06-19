@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StepFourComponent } from './step-four.component';
 
@@ -8,6 +9,7 @@ describe('StepFourComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [StepFourComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 

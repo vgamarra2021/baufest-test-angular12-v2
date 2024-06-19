@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { StepTwoComponent } from './step-two.component';
 
 describe('StepTwoComponent', () => {
@@ -8,9 +8,9 @@ describe('StepTwoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StepTwoComponent ]
-    })
-    .compileComponents();
+      declarations: [StepTwoComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {

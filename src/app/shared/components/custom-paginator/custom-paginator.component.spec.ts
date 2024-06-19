@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CustomPaginatorComponent } from './custom-paginator.component';
 
 describe('CustomPaginatorComponent', () => {
@@ -8,9 +8,9 @@ describe('CustomPaginatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomPaginatorComponent ]
-    })
-    .compileComponents();
+      declarations: [CustomPaginatorComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {

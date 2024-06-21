@@ -8,8 +8,4 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class PrimaryButtonComponent {
   @Input() title: string = '';
   @Output() onClick = new EventEmitter();
-
-  click() {
-    this.onClick.emit();
-  }
 }

@@ -45,7 +45,7 @@ export class StepTwoContainer {
   }
 
   onChangeBillingType() {
-    const isYearly = this.formGroup.value?.isYearly;
+    const isYearly = this.formGroup.value.isYearly;
     isYearly ? (this.billingType = 'year') : (this.billingType = 'month');
   }
 

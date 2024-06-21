@@ -16,8 +16,4 @@ export class CharacterCardComponent {
   @Input() character!: ICharacter;
   @Input() selectedEpisode: string = '';
   @Output() onCompareClick = new EventEmitter<ICharacter>();
-
-  onClick() {
-    this.onCompareClick.emit(this.character);
-  }
 }

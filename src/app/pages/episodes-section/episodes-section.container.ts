@@ -85,7 +85,7 @@ export class EpisodesSectionContainer implements OnInit, OnDestroy {
           return EMPTY;
         }),
         tap((res: IEpisodeResponse | undefined) => {
-          this.total = res?.info.count || 0;
+          this.total = res?.info?.count || 0;
           this.episodes = (res?.results as IEpisode[]) || [];
         })
       )

@@ -39,8 +39,6 @@ export class StepThreeContainer implements OnInit {
   onNextStep() {
     const addons = this.formGroup.value as IAddon[];
     const mapAddons = Object.entries(addons).map(([key, addon]) => addon);
-
-    console.log(mapAddons);
     this.service.stepThreeData.addons = mapAddons;
     this.router.navigate(['/multi-step-form/step-four']);
   }

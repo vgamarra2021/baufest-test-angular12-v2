@@ -56,7 +56,7 @@ export class LocationsSectionContainer implements OnInit, OnDestroy {
           return EMPTY;
         }),
         tap((res: ILocationResponse | undefined) => {
-          this.total = res?.info.count || 0;
+          this.total = res?.info?.count || 0;
           this.locations = (res?.results as ILocation[]) || [];
         })
       )

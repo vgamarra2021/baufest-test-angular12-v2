@@ -71,7 +71,7 @@ export class CharactersSectionContainer implements OnInit, OnDestroy {
           return EMPTY;
         }),
         tap((res: ICharacterResponse | undefined) => {
-          this.total = res?.info.count || 0;
+          this.total = res?.info?.count || 0;
           this.characters = (res?.results as ICharacter[]) || [];
         })
       )

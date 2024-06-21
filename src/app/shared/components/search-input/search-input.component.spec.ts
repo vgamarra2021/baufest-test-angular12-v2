@@ -31,7 +31,6 @@ describe('SearchInputComponent', () => {
   it('should create', fakeAsync(() => {
     spyOn(component.onChange, 'emit');
     const inputElement = debugElement.query(By.css('input')).nativeElement;
-
     inputElement.value = 'Rick';
     inputElement.dispatchEvent(new Event('input'));
     fixture.detectChanges();

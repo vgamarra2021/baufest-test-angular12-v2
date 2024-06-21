@@ -1,12 +1,7 @@
 import { Location } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MultiStepFormService } from '../common/services/multi-step-form/multi-step-form.service';
@@ -17,7 +12,7 @@ describe('StepTwoContainer', () => {
   let fixture: ComponentFixture<StepTwoContainer>;
   let router: Router;
   let location: Location;
-  let multiStepFormServiceSpy: jasmine.SpyObj<MultiStepFormService>;
+  let multiStepFormServiceSpy: MultiStepFormService;
   const mockPlan = {
     id: 0,
     name: 'Test Plan',
@@ -25,16 +20,9 @@ describe('StepTwoContainer', () => {
   };
 
   beforeEach(async () => {
-    const multiStepFormService = jasmine.createSpyObj(
-      'MultiStepFormService',
-      ['stepTwoData'],
-      {
-        stepTwoData: {
-          selectedPlan: {},
-          billingType: '',
-        },
-      }
-    );
+    const multiStepFormService = jasmine.createSpyObj('MultiStepFormService', [
+      'stepTwoData',
+    ]);
 
     await TestBed.configureTestingModule({
       declarations: [StepTwoContainer],
@@ -57,18 +45,13 @@ describe('StepTwoContainer', () => {
 
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
-    multiStepFormServiceSpy = TestBed.inject(
-      MultiStepFormService
-    ) as jasmine.SpyObj<MultiStepFormService>;
+    multiStepFormServiceSpy = TestBed.inject(MultiStepFormService);
     router.initialNavigation();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(StepTwoContainer);
     component = fixture.componentInstance;
-    component.formGroup = new FormGroup({
-      isYearly: new FormControl(true),
-    });
     fixture.detectChanges();
   });
 
@@ -99,7 +82,6 @@ describe('StepTwoContainer', () => {
     expect(location.path()).toBe('/multi-step-form/step-one');
   });
 
-  //TODO: Revisar porque no se están seteando los valores en onNextStep
   it('should navigate to step three and update stepTwoData', async () => {
     component.selectedPlan = mockPlan;
     component.billingType = 'year';

@@ -11,8 +11,8 @@ describe('CharactersSectionContainer', () => {
   let component: CharactersSectionContainer;
   let fixture: ComponentFixture<CharactersSectionContainer>;
   let debugElement: DebugElement;
-  let charactersServiceSpy: jasmine.SpyObj<CharactersService>;
-  let characterCompareServiceSpy: jasmine.SpyObj<CharacterCompareService>;
+  let charactersServiceSpy: CharactersService;
+  let characterCompareServiceSpy: CharacterCompareService;
   const characterResponseMock = {
     info: {
       count: 126,
@@ -41,6 +41,7 @@ describe('CharactersSectionContainer', () => {
     url: 'https://rickandmortyapi.com/api/location/1',
     created: '2017-11-10T12:42:04.162Z',
   };
+
   beforeEach(async () => {
     const charactersService = jasmine.createSpyObj(
       'CharactersService',
@@ -64,12 +65,8 @@ describe('CharactersSectionContainer', () => {
         { provide: CharacterCompareService, useValue: characterCompareService },
       ],
     }).compileComponents();
-    charactersServiceSpy = TestBed.inject(
-      CharactersService
-    ) as jasmine.SpyObj<CharactersService>;
-    characterCompareServiceSpy = TestBed.inject(
-      CharacterCompareService
-    ) as jasmine.SpyObj<CharacterCompareService>;
+    charactersServiceSpy = TestBed.inject(CharactersService);
+    characterCompareServiceSpy = TestBed.inject(CharacterCompareService);
   });
 
   beforeEach(() => {
@@ -101,7 +98,7 @@ describe('CharactersSectionContainer', () => {
 describe('LocationsSectionContainer with throw Error', () => {
   let component: CharactersSectionContainer;
   let fixture: ComponentFixture<CharactersSectionContainer>;
-  let charactersServiceSpy: jasmine.SpyObj<CharactersService>;
+  let charactersServiceSpy: CharactersService;
 
   beforeEach(async () => {
     const charactersService = jasmine.createSpyObj(
@@ -118,9 +115,8 @@ describe('LocationsSectionContainer with throw Error', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [{ provide: CharactersService, useValue: charactersService }],
     }).compileComponents();
-    charactersServiceSpy = TestBed.inject(
-      CharactersService
-    ) as jasmine.SpyObj<CharactersService>;
+    
+    charactersServiceSpy = TestBed.inject(CharactersService);
   });
 
   beforeEach(() => {
@@ -139,7 +135,7 @@ describe('LocationsSectionContainer with throw Error', () => {
 describe('LocationsSectionContainer with Empty response', () => {
   let component: CharactersSectionContainer;
   let fixture: ComponentFixture<CharactersSectionContainer>;
-  let charactersServiceSpy: jasmine.SpyObj<CharactersService>;
+  let charactersServiceSpy: CharactersService;
 
   beforeEach(async () => {
     const charactersService = jasmine.createSpyObj(
@@ -156,9 +152,7 @@ describe('LocationsSectionContainer with Empty response', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [{ provide: CharactersService, useValue: charactersService }],
     }).compileComponents();
-    charactersServiceSpy = TestBed.inject(
-      CharactersService
-    ) as jasmine.SpyObj<CharactersService>;
+    charactersServiceSpy = TestBed.inject(CharactersService);
   });
 
   beforeEach(() => {

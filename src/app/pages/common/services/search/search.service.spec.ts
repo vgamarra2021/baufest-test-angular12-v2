@@ -6,9 +6,9 @@ import { LocationsService } from '../locations/locations.service';
 
 describe('SearchService', () => {
   let service: SearchService;
-  let charactersServiceSpy: jasmine.SpyObj<CharactersService>;
-  let episodesServiceSpy: jasmine.SpyObj<EpisodesService>;
-  let locationsServiceSpy: jasmine.SpyObj<LocationsService>;
+  let charactersServiceSpy: CharactersService;
+  let episodesServiceSpy: EpisodesService;
+  let locationsServiceSpy: LocationsService;
 
   beforeEach(() => {
     const spyChars = jasmine.createSpyObj('CharactersService', [
@@ -31,15 +31,9 @@ describe('SearchService', () => {
     });
 
     service = TestBed.inject(SearchService);
-    charactersServiceSpy = TestBed.inject(
-      CharactersService
-    ) as jasmine.SpyObj<CharactersService>;
-    episodesServiceSpy = TestBed.inject(
-      EpisodesService
-    ) as jasmine.SpyObj<EpisodesService>;
-    locationsServiceSpy = TestBed.inject(
-      LocationsService
-    ) as jasmine.SpyObj<LocationsService>;
+    charactersServiceSpy = TestBed.inject(CharactersService);
+    episodesServiceSpy = TestBed.inject(EpisodesService);
+    locationsServiceSpy = TestBed.inject(LocationsService);
   });
 
   it('should be created', () => {
